@@ -2,7 +2,7 @@
 #!desc=Intercepts the Splitwise license verification and adds the subscription data
 
 [Script]
-Splitwise = type=http-response,pattern=^https:\/\/secure\.splitwise\.com\/api\/v3\.0\/(get_main_data|subscriptions|get_current_user),script-path=https://cdn.jsdelivr.net/gh/aazbeltran/Surge/Scripts/Splitwise.js
+Splitwise = type=http-response,pattern=^https:\/\/secure\.splitwise\.com\/api\/(?:v3\.0\/(?:get_main_data|subscriptions|get_current_user)|v4\.0\/auth)\/?(?:\?.*)?$,script-path=https://cdn.jsdelivr.net/gh/aazbeltran/Surge/Scripts/Splitwise.js
 
 [MITM]
 hostname = %APPEND% secure.splitwise.com
